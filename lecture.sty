@@ -1,0 +1,32 @@
+\ProvidesPackage{lecture}
+\usepackage{graphicx}
+
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+\newcommand{\slide}[3]{
+	\only<#1>{
+		\begin{center}
+			#2 \\
+			\includegraphics[height=2.8in,width=3.8in,keepaspectratio=true]{../images/#3}
+		\end{center}
+	}
+}
+
+\newcommand{\timeout}{
+	\begin{frame}{Break Time}
+		\Huge Keep Calm and Carry On.
+	\end{frame}
+}
+
+\newcommand{\firstslide}[2][{\date}]{
+	\title{#2}
+	\date{#1}
+
+	\titlepage
+
+	\frame{
+		\frametitle{Overview}
+		\tableofcontents
+	}
+}
