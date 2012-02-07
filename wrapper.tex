@@ -1,0 +1,18 @@
+% This is a generic course wrapper root file which makes it easier to maintain a consistent look within a course
+% I have one of these for each course with a different styling and course details (not included in the repo --- make your own!)
+
+\documentclass[10pt]{beamer}
+\usepackage{lecture}	% simple styling package with a few shorthand macros
+
+% Slide styling
+\usetheme{Marburg}		% See the Beamer Style Matrix at:
+\usecolortheme{seahorse}% http://www.hartwork.org/beamer-theme-matrix/
+
+% Course-Specific Details
+\author{Christopher Roussel} % Instructor and/or University
+\institute{University of Somewhere \\ HUM 111}% University and/or course
+
+\begin{document}
+	% load specific week
+	\include{su-hum111/sources/1-mesopotamia}
+\end{document}

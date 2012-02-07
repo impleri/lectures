@@ -1,9 +1,11 @@
 \ProvidesPackage{lecture}
 \usepackage{graphicx}
 
+% Style links to be noticeable
 \definecolor{links}{HTML}{2A1B81}
 \hypersetup{colorlinks,linkcolor=,urlcolor=links}
 
+% Shortcut to put an image within a slide
 \newcommand{\slide}[3]{
 	\only<#1>{
 		\begin{center}
@@ -13,12 +15,14 @@
 	}
 }
 
+% Shortcut to add a session break slide
 \newcommand{\timeout}{
 	\begin{frame}{Break Time}
 		\Huge Keep Calm and Carry On.
 	\end{frame}
 }
 
+% Shortcut to set title and date, then load a title slide and a table of contents slide
 \newcommand{\firstslide}[2][{\date}]{
 	\title{#2}
 	\date{#1}
