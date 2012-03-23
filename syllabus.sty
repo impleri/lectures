@@ -1,0 +1,116 @@
+\ProvidesPackage{syllabus}
+\author{Dr. Christopher Roussel}
+\usepackage{longtable,ltcaption,array,multirow,fullpage}
+
+\setlength{\parindent}{0in}
+
+% Creates a column type for tabular environment which centers a paragraph
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+% Shortcut to create an itemized list without spacing/padding between lines
+\newenvironment{itemize*}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{itemize}}
+
+% Shortcut to create an enumerated list without spacing/padding between lines
+\newenvironment{enumerate*}%
+  {\begin{enumerate}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parskip}{0pt}}%
+  {\end{enumerate}}
+
+% Shortcut to create an environment for grading rubrics (which share the same heading and rows for clarity and grammar)
+\newenvironment{rubric}[4]
+{
+	Grading for this assignment will be marked using the following rubric:
+	\begin{longtable*}{| p{1.15in} | p{1.15in} | p{1.15in} | p{1.15in} | p{1.15in} |}
+	\hline
+	\textbf{Criteria}
+	& \textbf{Unacceptable} \newline #1 points \newline \emph{Below 60\%}
+	& \textbf{Developing} \newline #2 points \newline \emph{60-79\%}
+	& \textbf{Competent} \newline #3 points \newline \emph{80-89\%}
+	& \textbf{Exemplary} \newline #4 points \newline \emph{90-100\%} \\ \hline
+	\endhead
+}
+{
+	\\ \hline
+
+	Clarity
+	& Unclear and not well organized
+	& Generally unclear and not organized
+	& Generally clear and organized
+	& Very clear and well organized \\ \hline
+
+	Grammar and Formatting
+	& More than 8 errors present.
+	& 6-8 errors present.
+	& 3-5 errors present.
+	& 0-2 errors present. \\ \hline
+	\end{longtable*}
+}
+
+% Shortcut to create an environment for grading breakdown
+\newenvironment{grade}[2]
+{
+	\section*{Grading Policies}
+	\begin{center}
+	\begin{tabular}{| l | C{1.5in} | c |}
+	\hline
+	\textbf{Item}	& \textbf{Points}	& \textbf{Percentage of Grade} \\ \hline
+}
+{
+	\end{tabular}
+	\end{center}
+}
+
+% Shortcut to create a grading breakdown chart
+\newcommand{\gradeChart}[3]{
+	\begin{grade}
+	#3
+	Participation (11 class sessions) 		& 220	& #1\% \\ \hline
+	Totals									& #2	& 100\% \\ \hline
+\end{grade}
+}
+
+% Shortcut to create an overall grade chart
+\newcommand{\gradesChart}[5]{
+	\subsection*{Final Grades}
+	\begin{center}
+	\begin{tabular}{c || c | c}
+	Grade &	Points	& Percentage \\
+	A	& #1	& 90\%--100\% \\
+	B	& #2	& 80\%--89\% \\
+	C	& #3	& 70\%--79\% \\
+	D	& #4	& 60\%--69\% \\
+	F	& Below #5	& Below 60\% \\
+\end{tabular}
+\end{center}
+}
+
+% Shortcut to construct weekly schedule on syllabus
+\newcommand{\weekrow}[5]{#1 \newline \emph{#2} & \textbf{#3} \newline \emph{Reading}: #4 \newline \emph{Evaluation}: #5 \\ \hline}
+\newcommand{\weekrowNoEval}[4]{#1 \newline \emph{#2} & \textbf{#3} \newline \emph{Reading}: #4 \\ \hline}
+\newcommand{\weekrowNoPrep}[4]{#1 \newline \emph{#2} & \textbf{#3} \newline \emph{Evaluation}: #4 \\ \hline}
+
+% Shortcut to construct a grading rubric based on 40 points per item
+\newcommand{\rubricForty}[1]{
+	\begin{rubric}{20--23}{24--31}{32--35}{36--40}
+	#1
+	\end{rubric}
+}
+
+% Shortcut to construct a grading rubric based on 25 points per item
+\newcommand{\rubricQuarter}[1]{
+	\begin{rubric}{12--14}{15--19}{20--22}{23--25}
+	#1
+	\end{rubric}
+}
+
+% Shortcut to construct a grading rubric based on 20 points per item
+\newcommand{\rubricTwenty}[1]{
+	\begin{rubric}{10--11}{12--15}{16--17}{18--20}
+	#1
+	\end{rubric}
+}

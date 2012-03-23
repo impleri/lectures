@@ -22,6 +22,16 @@
 	\end{frame}
 }
 
+% Shortcut to add a quiz time slide
+\newcommand{\quiz}{
+	\section{Quiz}
+	\begin{frame}{Quiz}
+		\begin{center}
+			\Huge Time Remaining
+		\end{center}
+	\end{frame}
+}
+
 % Shortcut to set title and date, then load a title slide and a table of contents slide
 \newcommand{\firstslide}[2][{\date}]{
 	\title{#2}
@@ -34,3 +44,6 @@
 		\tableofcontents
 	}
 }
+
+% Shortcut to construct weekly schedule on intro slide (in generic-policies.tex)
+\newcommand{\weekrow}[5]{\item<+->\emph{#2}: #3}
