@@ -1,7 +1,10 @@
 % This is a generic course wrapper root file which makes it easier to maintain a consistent look within a course
 % I have one of these for each course with a different styling and course details (not included in the repo --- make your own!)
 
-\documentclass[10pt]{beamer}
+\documentclass[10pt]{beamer}	% Use this to build a slideshow presentation
+% \documentclass[10pt]{article} % Use this with beamerarticle to build an outline on normal paper
+% \usepackage{beamerarticle}    % useful for making handouts of the slides
+
 \usepackage{lecture}	% simple styling package with a few shorthand macros
 
 % Slide styling
@@ -14,5 +17,5 @@
 
 \begin{document}
 	% load specific week
-	\include{su-hum111/sources/1-mesopotamia}
+	\input{su-hum111/sources/1-mesopotamia}
 \end{document}
